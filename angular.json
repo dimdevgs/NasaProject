@@ -48,7 +48,10 @@
             "polyfills": "apps/nasa/src/polyfills.ts",
             "tsConfig": "apps/nasa/tsconfig.app.json",
             "assets": ["apps/nasa/src/favicon.ico", "apps/nasa/src/assets"],
-            "styles": ["apps/nasa/src/styles.css"],
+            "styles": [
+              "node_modules/devextreme/dist/css/dx.light.css",
+              "apps/nasa/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {

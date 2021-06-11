@@ -1,0 +1,8 @@
+::ng-deep #tabs {
+  margin-top: 0px;
+}
+::ng-deep .dx-tab-text {
+  color: #000000;
+}
+
+
