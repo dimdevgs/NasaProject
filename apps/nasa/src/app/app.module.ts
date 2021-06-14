@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import {DxDrawerModule, DxListModule, DxToolbarModule} from "devextreme-angular";
+import {DxDateBoxModule, DxDrawerModule, DxListModule, DxToolbarModule} from "devextreme-angular";
 import {AppService} from "./app.service";
 import {AppRoutingModule} from "./app-routing.module";
 import {ApodService} from "./features/apod/apod.service";
 import { HttpClientModule} from "@angular/common/http";
-import { TodayComponent } from './features/apod/today/today.component';
-import { StartEndComponent } from './features/apod/start-end/start-end.component';
-import { CountComponent } from './features/apod/count/count.component';
+import {StartEndService} from "./features/apod/start-end/start-end.service";
+import {DatePipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -20,9 +19,10 @@ import { CountComponent } from './features/apod/count/count.component';
     DxDrawerModule,
     DxListModule,
     DxToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    DxDateBoxModule
   ],
-  providers: [AppService, ApodService],
+  providers: [AppService, ApodService, StartEndService, DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -65,8 +65,17 @@
 }
 
 ::ng-deep span {
-  color: #ffffff;
+  color: #000000;
 }
+
+
+
+
+
+
+
+
+
 
 /*!**/
 /* * Remove template code below*/

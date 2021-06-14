@@ -1,0 +1,30 @@
+<!--<dx-list-->
+<!--  [dataSource]="dataSource"-->
+<!--  itemTemplate="item">-->
+<!--  <div *dxTemplate="let itemData of 'item'">-->
+<!--    <p>{{itemData.title}}</p>-->
+<!--  </div>-->
+<!--</dx-list>-->
+
+
+<div class="left">
+  <dx-list
+    class="list"
+    [dataSource]="dataSource"
+    [searchEnabled]="true"
+    itemTemplate="item"
+    selectionMode="single">
+<!--    [selectedItemKeys]="[currentHotel.Id]"-->
+<!--    (onSelectionChanged)=listSelectionChanged($event)-->
+    <div *dxTemplate="let item of 'item'">
+      <div>
+        <div class="hotel">
+          <div class="name">{{ item.title }}</div>
+        </div>
+        <div class="date-container">
+          <div class="caption">{{ item.date }}</div>
+        </div>
+      </div>
+    </div>
+  </dx-list>
+</div>

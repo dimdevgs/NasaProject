@@ -1,1 +1,30 @@
-<p>start-end works!</p>
+<div class="dx-fieldset">
+  <div class="dx-field">
+    <div class="dx-field-label">Start date:</div>
+    <div class="dx-field-value">
+      <dx-date-box
+        [(value)]="startDate"
+        type="date"
+        (onValueChanged)="dateBoxValueChanged($event)">
+      </dx-date-box>
+    </div>
+    <div class="dx-field-label">End date:</div>
+    <div class="dx-field-value">
+      <dx-date-box
+        [(value)]="endDate"
+        type="date"
+        (onValueChanged)="dateBoxValueChanged($event)">
+      </dx-date-box>
+    </div>
+    <dx-button
+      stylingMode="contained"
+      text="Find"
+      type="default"
+      [width]="120"
+      (onClick)="clickFindButton($event)"
+    >
+    </dx-button>
+  </div>
+</div>
+
+<nasa-apod-list-view></nasa-apod-list-view>

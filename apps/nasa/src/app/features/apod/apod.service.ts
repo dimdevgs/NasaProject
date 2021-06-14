@@ -32,7 +32,6 @@ export class ApodService {
   private REST_API_SERVER = "https://api.nasa.gov/planetary/apod?api_key=VUrpVsyC6Wbt0djJQ5LeQPTqViJXyOpoyftnJogT";
 
   constructor(private httpClient: HttpClient) {
-
   }
 
   public sendGetRequest(){

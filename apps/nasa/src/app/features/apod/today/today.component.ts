@@ -14,7 +14,7 @@ export class TodayComponent implements OnInit {
 
   ngOnInit(): void {
     this.apodService.sendGetRequest().subscribe(data => {
-      console.log('data:', data);
+      console.log('today data:', data);
       this.data = data;
     })
   }
