@@ -16,15 +16,19 @@
         (onValueChanged)="dateBoxValueChanged($event)">
       </dx-date-box>
     </div>
-    <dx-button
-      stylingMode="contained"
-      text="Find"
-      type="default"
-      [width]="120"
-      (onClick)="clickFindButton($event)"
-    >
-    </dx-button>
+<!--    <dx-button-->
+<!--      stylingMode="contained"-->
+<!--      text="Find"-->
+<!--      type="default"-->
+<!--      [width]="120">-->
+<!--      (onClick)="clickFindButton()">-->
+<!--    </dx-button>-->
   </div>
+  {{ startDate }}
 </div>
 
-<nasa-apod-list-view></nasa-apod-list-view>
+<nasa-apod-list-view
+  [startDateApodListView]="startDate"
+  [endDateApodListView]="endDate"
+>
+</nasa-apod-list-view>

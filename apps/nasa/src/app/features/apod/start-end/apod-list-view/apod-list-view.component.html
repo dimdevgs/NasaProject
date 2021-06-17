@@ -1,21 +1,13 @@
-<!--<dx-list-->
-<!--  [dataSource]="dataSource"-->
-<!--  itemTemplate="item">-->
-<!--  <div *dxTemplate="let itemData of 'item'">-->
-<!--    <p>{{itemData.title}}</p>-->
-<!--  </div>-->
-<!--</dx-list>-->
-
-
 <div class="left">
   <dx-list
     class="list"
     [dataSource]="dataSource"
     [searchEnabled]="true"
-    itemTemplate="item"
     selectionMode="single">
-<!--    [selectedItemKeys]="[currentHotel.Id]"-->
-<!--    (onSelectionChanged)=listSelectionChanged($event)-->
+  <!--    [selectedItemKeys]="[currentHotel.Id]"-->
+<!--    (onSelectionChanged)=listSelectionChanged($event)>-->
+    <!--    itemTemplate="item"-->
+
     <div *dxTemplate="let item of 'item'">
       <div>
         <div class="hotel">
@@ -27,4 +19,5 @@
       </div>
     </div>
   </dx-list>
+  {{ startDateApodListView }}
 </div>

@@ -8,6 +8,7 @@ import {ApodService} from "./features/apod/apod.service";
 import { HttpClientModule} from "@angular/common/http";
 import {StartEndService} from "./features/apod/start-end/start-end.service";
 import {DatePipe} from "@angular/common";
+import {ApodListViewComponent} from "./features/apod/start-end/apod-list-view/apod-list-view.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import {DatePipe} from "@angular/common";
     HttpClientModule,
     DxDateBoxModule
   ],
-  providers: [AppService, ApodService, StartEndService, DatePipe],
+  providers: [AppService, ApodService, StartEndService, DatePipe, ApodListViewComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
