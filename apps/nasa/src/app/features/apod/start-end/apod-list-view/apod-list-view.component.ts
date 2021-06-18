@@ -28,7 +28,7 @@ export class ApodListViewComponent {
           return this.startEndService.sendGetRequestStartEndDates(this.startDateApodListView, this.endDateApodListView)
             .toPromise()
             .then(value => {
-              // console.log('data dataSource:', value);
+              console.log('data dataSource:', value);
               return {
                 data: value,
                 totalCount: 1 // TODO automatic
@@ -40,14 +40,14 @@ export class ApodListViewComponent {
 
     this.startEndService.getFirstApod(this.startDateApodListView).subscribe(firstApod => {
       // console.log('getFirstApod results:', firstApod);
-      console.log('First Apod:', firstApod[0]);
+      // console.log('First Apod:', firstApod[0]);
       this.currentApod = firstApod[0];
     });
   }
 
   listSelectionChanged = (event: any) => {
     this.currentApod = event.addedItems[0];
-    console.log('listSelectionChanged event:', event);
+    // console.log('listSelectionChanged event:', event);
   }
 
   ngOnChanges() {

@@ -11,27 +11,26 @@
     <div *dxTemplate="let item of 'item'">
       <div>
         <div class="apod">
-          <div class="name">{{ item.title }}</div>
-          <div class="copyright">{{ item.copyright }}</div>
+          <div class="name" *ngIf="item?.title">{{ item.title }}</div>
+          <div class="copyright" *ngIf="item?.copyright">{{ item.copyright }}</div>
         </div>
         <div class="date-container">
-          <div class="caption">{{ item.date }}</div>
+          <div class="caption" *ngIf="item?.date">{{ item.date }}</div>
         </div>
       </div>
     </div>
   </dx-list>
-<!--  {{ startDateApodListView }}-->
 </div>
 <div class="right">
   <div class="header">
     <div class="name-container">
-      <div class="name">{{ currentApod.title }}</div>
+      <div class="name" *ngIf="currentApod?.title">{{ currentApod.title }}</div>
     </div>
     <div class="date-container">
-      <div class="date">{{ currentApod.date }}</div>
+      <div class="date" *ngIf="currentApod?.date">{{ currentApod.date }}</div>
     </div>
   </div>
-  <img src="{{ currentApod.url }}" alt="{{ currentApod.title }}">
-  <div>{{ currentApod.explanation }}</div>
+  <img *ngIf="currentApod?.url" src="{{ currentApod.url }}" alt="{{ currentApod.title }}">
+  <div *ngIf="currentApod?.explanation">{{ currentApod.explanation }}</div>
 
 </div>
