@@ -4,7 +4,14 @@ import { ApodComponent } from "./features/apod/apod.component";
 import { EonetComponent } from "./features/eonet/eonet.component";
 import { DonkiComponent } from "./features/donki/donki.component";
 import { PageNotFoundComponent } from "./features/page-not-found/page-not-found.component";
-import {DxButtonModule, DxDataGridModule, DxDateBoxModule, DxListModule, DxTabsModule} from "devextreme-angular";
+import {
+  DxButtonModule,
+  DxDataGridModule,
+  DxDateBoxModule,
+  DxListModule,
+  DxTabsModule,
+  DxTileViewModule
+} from "devextreme-angular";
 import {TodayComponent} from "./features/apod/today/today.component";
 import {StartEndComponent} from "./features/apod/start-end/start-end.component";
 import {CountComponent} from "./features/apod/count/count.component";
@@ -24,7 +31,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), DxButtonModule, DxTabsModule, CommonModule, DxDateBoxModule, DxiValidationRuleModule, DxListModule, DxDataGridModule],
+  imports: [RouterModule.forRoot(routes), DxButtonModule, DxTabsModule, CommonModule, DxDateBoxModule, DxiValidationRuleModule, DxListModule, DxDataGridModule, DxTileViewModule],
   exports: [RouterModule],
   declarations: [
     ApodComponent,

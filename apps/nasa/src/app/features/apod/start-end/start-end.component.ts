@@ -18,34 +18,4 @@ export class StartEndComponent {
   constructor(private httpClient: HttpClient, private startEndService: StartEndService, private router: Router) {
   }
 
-  dateBoxValueChanged(event: any): void {
-    // console.log('startDate:', this.startDate);
-    // console.log('endDate:', this.endDate);
-    // this.apodListViewComponent.startDateApodListView = this.startDate;
-    // this.apodListViewComponent.endDateApodListView = this.endDate;
-    // const newApodListViewComponentObj = new ApodListViewComponent(this.httpClient, this.startEndService);
-    // console.log(event.value);
-  }
-
-
-  clickFindButton(): void {
-    // this.startEndService.startDateService = this.startDate;
-    // this.startEndService.endDateService = this.endDate;
-    // this.startEndService.dateFormatting(this.startDate, this.endDate)
-    // const newApodListViewComponentObj = new ApodListViewComponent(this.httpClient, this.startEndService);
-  }
-
-/*  clickFindButton(event: any): void {
-    this.startEndService.startDate = this.startDate;
-    this.startEndService.endDate = this.endDate;
-    console.log('startDate:', this.startDate )
-    console.log('endDate:', this.endDate )
-/!*    this.startEndService.sendGetRequestStartEndDates(startDate, endDate).subscribe(value => {
-      console.log('start-end value:', value);
-      const newApodListViewComponentObj = new ApodListViewComponent(this.httpClient, this.startEndService, this.startDate, this.endDate)
-    });*!/
-    this.apodListViewComponent.startDate = this.startDate;
-    this.apodListViewComponent.endDate = this.endDate;
-    const newApodListViewComponentObj = new ApodListViewComponent(this.httpClient, this.startEndService)
-  }*/
 }

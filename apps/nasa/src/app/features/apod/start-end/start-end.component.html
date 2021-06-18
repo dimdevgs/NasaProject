@@ -4,27 +4,18 @@
     <div class="dx-field-value">
       <dx-date-box
         [(value)]="startDate"
-        type="date"
-        (onValueChanged)="dateBoxValueChanged($event)">
+        type="date">
       </dx-date-box>
     </div>
     <div class="dx-field-label">End date:</div>
     <div class="dx-field-value">
       <dx-date-box
         [(value)]="endDate"
-        type="date"
-        (onValueChanged)="dateBoxValueChanged($event)">
+        type="date">
       </dx-date-box>
     </div>
-<!--    <dx-button-->
-<!--      stylingMode="contained"-->
-<!--      text="Find"-->
-<!--      type="default"-->
-<!--      [width]="120">-->
-<!--      (onClick)="clickFindButton()">-->
-<!--    </dx-button>-->
   </div>
-  {{ startDate }}
+<!--  {{ startDate }}-->
 </div>
 
 <nasa-apod-list-view

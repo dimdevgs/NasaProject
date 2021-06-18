@@ -3,15 +3,16 @@
     class="list"
     [dataSource]="dataSource"
     [searchEnabled]="true"
-    selectionMode="single">
-  <!--    [selectedItemKeys]="[currentHotel.Id]"-->
-<!--    (onSelectionChanged)=listSelectionChanged($event)>-->
+    selectionMode="single"
+    (onSelectionChanged)=listSelectionChanged($event)>
+<!--    [selectedItemKeys]="[currentHotel.Id]"-->
     <!--    itemTemplate="item"-->
 
     <div *dxTemplate="let item of 'item'">
       <div>
-        <div class="hotel">
+        <div class="apod">
           <div class="name">{{ item.title }}</div>
+          <div class="copyright">{{ item.copyright }}</div>
         </div>
         <div class="date-container">
           <div class="caption">{{ item.date }}</div>
@@ -19,5 +20,18 @@
       </div>
     </div>
   </dx-list>
-  {{ startDateApodListView }}
+<!--  {{ startDateApodListView }}-->
+</div>
+<div class="right">
+  <div class="header">
+    <div class="name-container">
+      <div class="name">{{ currentApod.title }}</div>
+    </div>
+    <div class="date-container">
+      <div class="date">{{ currentApod.date }}</div>
+    </div>
+  </div>
+  <img src="{{ currentApod.url }}" alt="{{ currentApod.title }}">
+  <div>{{ currentApod.explanation }}</div>
+
 </div>

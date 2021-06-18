@@ -3,9 +3,8 @@ import { StartEndService } from '../start-end.service';
 import DataSource from 'devextreme/data/data_source';
 import CustomStore from "devextreme/data/custom_store";
 import {HttpClient} from "@angular/common/http";
-import {Router} from "@angular/router";
-import DevExpress from "devextreme";
-import data = DevExpress.data;
+import {getLocaleFirstDayOfWeek} from "@angular/common";
+import {first} from "rxjs/operators";
 
 @Component({
   selector: 'nasa-apod-list-view',
@@ -14,10 +13,10 @@ import data = DevExpress.data;
 })
 
 export class ApodListViewComponent {
-  // @ViewChild(StartEndComponent);
   @Input() startDateApodListView: any;
   @Input() endDateApodListView: any;
   dataSource: DataSource;
+  currentApod: any;
 
   constructor(private httpClient: HttpClient, private startEndService: StartEndService) {
     console.log('constructor dataSource:', this.startDateApodListView, typeof this.endDateApodListView);
@@ -29,7 +28,7 @@ export class ApodListViewComponent {
           return this.startEndService.sendGetRequestStartEndDates(this.startDateApodListView, this.endDateApodListView)
             .toPromise()
             .then(value => {
-              console.log('data dataSource:', value);
+              // console.log('data dataSource:', value);
               return {
                 data: value,
                 totalCount: 1 // TODO automatic
@@ -37,17 +36,27 @@ export class ApodListViewComponent {
             });
         }
       })
-
     })
+
+    this.startEndService.getFirstApod(this.startDateApodListView).subscribe(firstApod => {
+      // console.log('getFirstApod results:', firstApod);
+      console.log('First Apod:', firstApod[0]);
+      this.currentApod = firstApod[0];
+    });
+  }
+
+  listSelectionChanged = (event: any) => {
+    this.currentApod = event.addedItems[0];
+    console.log('listSelectionChanged event:', event);
   }
 
   ngOnChanges() {
-    console.log('ngOnChange is running...');
-    console.log('startDateApodListView:', this.startDateApodListView);
-    console.log('endDateApodListView:', this.endDateApodListView);
+    // console.log('ngOnChange is running...');
+    // console.log('startDateApodListView:', this.startDateApodListView);
+    // console.log('endDateApodListView:', this.endDateApodListView);
     this.startEndService.sendGetRequestStartEndDates(this.startDateApodListView, this.endDateApodListView).subscribe(value => {
-      console.log('subscribed value:', value);
       this.dataSource = value;
+      // console.log('subscribed value:', value);
     });
   }
 

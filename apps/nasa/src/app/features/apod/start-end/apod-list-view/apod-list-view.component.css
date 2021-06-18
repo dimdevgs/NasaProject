@@ -17,11 +17,11 @@
   font-size: 18px;
 }
 
-::ng-deep .left .list .hotel {
+::ng-deep .left .list .apod {
   float: left;
 }
 
-::ng-deep .left .list .hotel .name {
+::ng-deep .left .list .apod .name {
   font-weight: bold;
 }
 
@@ -34,7 +34,7 @@
 }
 
 ::ng-deep .right .header .name {
-  font-size: 30px;
+  font-size: 15px;
   font-weight: bold;
 }
 
@@ -56,7 +56,7 @@
   background-size: cover;
 }
 
-::ng-deep .right .address {
+::ng-deep .right .copyright {
   padding-top: 30px;
   font-size: 18px;
   opacity: 0.7;
@@ -94,8 +94,8 @@
   display: inline-block;
 }
 
-::ng-deep .date-container .price {
-  font-size: 25px;
+::ng-deep .date-container .date {
+  font-size: 15px;
 }
 
 ::ng-deep .date-container .caption {
