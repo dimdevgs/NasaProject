@@ -15,7 +15,7 @@
       [items]="navigation"
       [width]="200"
       selectionMode="single"
-      (onSelectionChanged)="this.isDrawerOpen = false"
+      (onSelectionChanged)="this.isDrawerOpen = true"
       itemTemplate="links">
       <div *dxTemplate="let link of 'links'">
         <a [routerLink]="['/' + link.path]">
@@ -29,7 +29,7 @@
       </div>
     </dx-list>
   </div>
-  <div id="view">
+  <div id="content" class="dx-theme-background-color">
     <router-outlet></router-outlet>
   </div>
 </dx-drawer>

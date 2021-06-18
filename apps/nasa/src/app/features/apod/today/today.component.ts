@@ -7,16 +7,24 @@ import {ApodService} from "../apod.service";
   styleUrls: ['./today.component.css']
 })
 export class TodayComponent implements OnInit {
-  data: any;
+  data: any = null;
 
   constructor(private apodService: ApodService) {
-  }
-
-  ngOnInit(): void {
     this.apodService.sendGetRequest().subscribe(data => {
       console.log('today data:', data);
       this.data = data;
     })
   }
+
+  ngOnInit(): void {
+
+  }
+
+  // ngOnChanges() {
+  //   this.apodService.sendGetRequest().subscribe(data => {
+  //     console.log('today data:', data);
+  //     this.data = data;
+  //   })
+  // }
 
 }
