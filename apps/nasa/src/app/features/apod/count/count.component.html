@@ -1,1 +1,18 @@
-<p>count works!</p>
+<dx-tile-view
+  #tileView
+  [dataSource]="dataSource"
+  [height]="390"
+  [baseItemHeight]="120"
+  [baseItemWidth]="185"
+  width="100%"
+  [itemMargin]="10"
+  direction="horizontal"
+>
+  <div *dxTemplate="let item of 'item'">
+    <div class="count">
+      <img src="{{ item.url }}" alt="item.title">
+    </div>
+  </div>
+</dx-tile-view>
+
+

@@ -1,5 +1,13 @@
-<h1 *ngIf="data?.title">{{ data.title }}</h1>
-<p *ngIf="data?.date">Date: {{ data.date | date : 'longDate' }}</p>
-<p *ngIf="data?.copyright">Copyright: {{ data.copyright }}</p>
-<p *ngIf="data?.explanation">{{ data.explanation }}</p>
-<img *ngIf="data?.url" src="{{ data.url }}" alt="{{ data.title }}" />
+<div class="content-apod">
+  <div class="header-apod">
+    <h1 *ngIf="data?.title">{{ data.title }}</h1>
+  </div>
+  <div class="description-apod">
+    <p *ngIf="data?.date">Date: {{ data.date | date : 'longDate' }}</p>
+    <p *ngIf="data?.copyright">Copyright: {{ data.copyright }}</p>
+    <p *ngIf="data?.explanation">{{ data.explanation }}</p>
+  </div>
+  <div class="img-apod">
+    <img *ngIf="data?.hdurl" src="{{ data.hdurl }}" alt="{{ data.title }}" />
+  </div>
+</div>

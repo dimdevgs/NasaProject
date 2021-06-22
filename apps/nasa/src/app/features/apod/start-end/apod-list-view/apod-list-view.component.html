@@ -30,7 +30,7 @@
       <div class="date" *ngIf="currentApod?.date">{{ currentApod.date }}</div>
     </div>
   </div>
-  <img *ngIf="currentApod?.url" src="{{ currentApod.url }}" alt="{{ currentApod.title }}">
   <div *ngIf="currentApod?.explanation">{{ currentApod.explanation }}</div>
+  <img *ngIf="currentApod?.hdurl" src="{{ currentApod.hdurl }}" alt="{{ currentApod.title }}">
 
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {ApodService} from "../apod.service";
 
 @Component({
@@ -6,25 +6,13 @@ import {ApodService} from "../apod.service";
   templateUrl: './today.component.html',
   styleUrls: ['./today.component.css']
 })
-export class TodayComponent implements OnInit {
+export class TodayComponent {
   data: any = null;
 
   constructor(private apodService: ApodService) {
     this.apodService.sendGetRequest().subscribe(data => {
-      console.log('today data:', data);
       this.data = data;
     })
   }
-
-  ngOnInit(): void {
-
-  }
-
-  // ngOnChanges() {
-  //   this.apodService.sendGetRequest().subscribe(data => {
-  //     console.log('today data:', data);
-  //     this.data = data;
-  //   })
-  // }
 
 }

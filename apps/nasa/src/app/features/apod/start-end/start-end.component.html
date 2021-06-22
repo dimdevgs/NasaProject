@@ -7,6 +7,8 @@
         type="date">
       </dx-date-box>
     </div>
+  </div>
+  <div class="dx-field">
     <div class="dx-field-label">End date:</div>
     <div class="dx-field-value">
       <dx-date-box
@@ -15,11 +17,9 @@
       </dx-date-box>
     </div>
   </div>
-<!--  {{ startDate }}-->
 </div>
 
 <nasa-apod-list-view
   [startDateApodListView]="startDate"
-  [endDateApodListView]="endDate"
->
+  [endDateApodListView]="endDate">
 </nasa-apod-list-view>

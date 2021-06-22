@@ -1,1 +1,33 @@
+.dx-fieldset {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.dx-field-label {
+  float: left;
+  width: 27%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #333;
+  cursor: default;
+  padding: 8px 0px 9px 0;
+}
+.dx-field-value {
+}
+
+.dx-field {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.dx-fieldset {
+}
+
+.dx-field-value-static, .dx-field-value:not(.dx-switch):not(.dx-checkbox):not(.dx-button) {
+  width: 60%;
+}
 

@@ -1,0 +1,17 @@
+.content-apod {
+  margin-left: 20px;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+img {
+  display: block;
+  max-width: 1920px;
+  max-height: 1024px;
+  width: auto;
+  height: auto;
+}
+
+
