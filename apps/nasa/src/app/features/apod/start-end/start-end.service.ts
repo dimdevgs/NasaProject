@@ -16,15 +16,12 @@ export class StartEndService {
   }
 
   public sendGetRequestStartEndDates(startDate: any, endDate: any): Observable<any> {
-    // console.log('sendGetRequestStartEndDates Start Date:', startDate, typeof startDate);
     if (startDate === undefined || endDate === undefined) {
       startDate = Date.now();
       endDate = Date.now();
     }
     this.startDateFormatted = this.datePipe.transform(startDate, 'yyyy-MM-dd');
     this.endDateFormatted = this.datePipe.transform(endDate, 'yyyy-MM-dd');
-    // console.log('Start date formatted:', this.startDateFormatted);
-    // console.log('End date formatted:', this.endDateFormatted);
     return this.httpClient.get<any>(this.REST_API_SERVER + '&start_date=' + this.startDateFormatted + '&end_date=' + this.endDateFormatted)
       .pipe(
           catchError((err) => {
@@ -35,7 +32,6 @@ export class StartEndService {
   }
 
   public getFirstApod(startDate: any): Observable<any> {
-    // console.log('getFirstApod Start Date:', startDate, typeof startDate);
     if (startDate === undefined) {
       startDate = Date.now();
     }

@@ -20,7 +20,6 @@ export class ApodComponent implements OnInit {
   selectTab(event: any): void {
     this.tabText = this.tabs[event.itemIndex].text;
     this.router.navigate(['/apod/', this.tabs[event.itemIndex].id]);
-    // this.router.navigate(['/apod/' + this.tabText]);
   }
 
   ngOnInit() {

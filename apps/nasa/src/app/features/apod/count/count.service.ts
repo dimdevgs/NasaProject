@@ -6,7 +6,6 @@ import {HttpClient} from "@angular/common/http";
 })
 export class CountService {
   private REST_API_SERVER = 'https://api.nasa.gov/planetary/apod?api_key=VUrpVsyC6Wbt0djJQ5LeQPTqViJXyOpoyftnJogT';
-  // public count: any;
 
   constructor(private httpClient: HttpClient) {
   }

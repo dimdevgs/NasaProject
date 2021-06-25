@@ -29,5 +29,10 @@ export class AppComponent {
       icon: 'menu',
       onClick: () => this.isDrawerOpen = !this.isDrawerOpen
     }
-  }];
+  },
+    {
+      text: 'Nasa Project',
+      location: 'before'
+    }
+  ];
 }

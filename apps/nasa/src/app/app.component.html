@@ -2,14 +2,14 @@
   [items]="toolbarContent">
 </dx-toolbar>
 <dx-drawer
-  [openedStateMode]="selectedOpenMode"
-  [position]="selectedPosition"
-  [revealMode]="selectedRevealMode"
+  openedStateMode="shrink"
+  position="left"
+  revealMode="slide"
   template="template"
   [(opened)]="isDrawerOpen"
   [closeOnOutsideClick]="true">
 
-  <div *dxTemplate="let data of 'template'">
+  <div *dxTemplate="let data of 'template'" style="width: 200px">
     <dx-list class="panel-list dx-theme-accent-as-background-color"
       [items]="navigation"
       [hoverStateEnabled]="false"
