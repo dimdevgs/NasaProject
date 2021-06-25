@@ -1,18 +1,28 @@
-<dx-tile-view
-  #tileView
-  [dataSource]="dataSource"
-  [height]="390"
-  [baseItemHeight]="120"
-  [baseItemWidth]="185"
-  width="100%"
-  [itemMargin]="10"
-  direction="horizontal"
->
-  <div *dxTemplate="let item of 'item'">
-    <div class="count">
-      <img src="{{ item.url }}" alt="item.title">
+<div class="form">
+  <div class="dx-fieldset">
+    <div class="dx-field">
+      <div class="dx-field-label">Count</div>
+      <div class="dx-field-value">
+        <dx-text-box
+          (onValueChanged)="textBoxValueChanged($event)">
+        </dx-text-box>
+      </div>
     </div>
   </div>
+</div>
+
+<dx-tile-view
+  class="dx-tile-content"
+  [dataSource]="dataSource"
+  [baseItemHeight]="150"
+  [baseItemWidth]="200"
+  height="100%"
+  direction="vertical">
+    <div *dxTemplate="let item of 'item'">
+      <div class="count">
+        <img *ngIf="(item?.url || item?.title)" class="image" src="{{ item.url }}" alt="{{ item.title }}">
+      </div>
+    </div>
 </dx-tile-view>
 
 

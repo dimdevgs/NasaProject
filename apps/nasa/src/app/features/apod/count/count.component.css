@@ -1,0 +1,35 @@
+::ng-deep .dx-tile-content {
+  width: 100%;
+}
+
+::ng-deep .image {
+  height: 150px;
+  width: 200px;
+}
+
+.dx-fieldset {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.dx-field-label {
+  float: left;
+  width: 30%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #333;
+  cursor: default;
+  padding: 8px 0px 9px 0;
+}
+.dx-field {
+  display: flex;
+  flex-direction: row;
+  width: 10%;
+}
+
+.dx-field-value-static, .dx-field-value:not(.dx-switch):not(.dx-checkbox):not(.dx-button) {
+  width: 60%;
+}

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {CountService} from "./count.service";
-import DataSource from "devextreme/data/data_source";
 
 @Component({
   selector: 'nasa-count',
@@ -10,10 +9,18 @@ import DataSource from "devextreme/data/data_source";
 export class CountComponent{
   dataSource: any | undefined;
   data: any = null;
+  count: any = 10;
 
   constructor(private countService: CountService) {
-    this.countService.sendGetRequestCount().subscribe(data => {
+    this.countService.sendGetRequestCount(this.count).subscribe(data => {
       console.log('data count:', data);
+      this.dataSource = data;
+    })
+  }
+
+  textBoxValueChanged(event: any) {
+    this.count = event.value;
+    this.countService.sendGetRequestCount(this.count).subscribe(data => {
       this.dataSource = data;
     })
   }

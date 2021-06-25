@@ -4,8 +4,10 @@
     [dataSource]="dataSource"
     [searchEnabled]="true"
     selectionMode="single"
+    searchExpr="title"
+    searchMode="contains"
     (onSelectionChanged)=listSelectionChanged($event)>
-<!--    [selectedItemKeys]="[currentHotel.Id]"-->
+<!--    [selectedItemKeys]="[currentApod.title]"-->
     <!--    itemTemplate="item"-->
 
     <div *dxTemplate="let item of 'item'">
@@ -31,6 +33,6 @@
     </div>
   </div>
   <div *ngIf="currentApod?.explanation">{{ currentApod.explanation }}</div>
-  <img *ngIf="currentApod?.hdurl" src="{{ currentApod.hdurl }}" alt="{{ currentApod.title }}">
+  <img *ngIf="(currentApod?.hdurl || currentApod?.title)" src="{{ currentApod.hdurl }}" alt="{{ currentApod.title }}">
 
 </div>

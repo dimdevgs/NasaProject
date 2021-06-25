@@ -5,6 +5,9 @@
       <dx-date-box
         [(value)]="startDate"
         type="date">
+          <dx-validator>
+            <dxi-validation-rule type="required" message="Start date is required"></dxi-validation-rule>
+          </dx-validator>
       </dx-date-box>
     </div>
   </div>
@@ -14,6 +17,9 @@
       <dx-date-box
         [(value)]="endDate"
         type="date">
+          <dx-validator>
+            <dxi-validation-rule type="required" message="End date is required"></dxi-validation-rule>
+          </dx-validator>
       </dx-date-box>
     </div>
   </div>

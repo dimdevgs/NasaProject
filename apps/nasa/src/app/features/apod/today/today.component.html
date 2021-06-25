@@ -8,6 +8,6 @@
     <p *ngIf="data?.explanation">{{ data.explanation }}</p>
   </div>
   <div class="img-apod">
-    <img *ngIf="data?.hdurl" src="{{ data.hdurl }}" alt="{{ data.title }}" />
+    <img *ngIf="(data?.hdurl || data?.title)" src="{{ data.hdurl }}" alt="{{ data.title }}" />
   </div>
 </div>

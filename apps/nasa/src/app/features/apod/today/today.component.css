@@ -7,11 +7,9 @@ h1 {
 }
 
 img {
-  display: block;
-  max-width: 1920px;
-  max-height: 1024px;
-  width: auto;
+  width: 100%;
   height: auto;
 }
+
 
 
