@@ -4,24 +4,21 @@ import { HttpClient } from '@angular/common/http';
 export class Tab {
   id: number | undefined;
   text: string | undefined;
-  content: string | undefined;
+  // content: string | undefined;
 }
 
-let tabs: Tab[] = [
-  {
-    id: 0,
-    text: "today",
-    content: "Today tab content"
-  },
+const tabs: Tab[] = [
   {
     id: 1,
-    text: "start-end",
-    content: "Start-End tab content"
+    text: "today"
   },
   {
     id: 2,
-    text: "count",
-    content: "Count tab content"
+    text: "start-end"
+  },
+  {
+    id: 3,
+    text: "count"
   }
 ];
 
@@ -30,6 +27,7 @@ let tabs: Tab[] = [
 })
 export class ApodService {
   private REST_API_SERVER = "https://api.nasa.gov/planetary/apod?api_key=VUrpVsyC6Wbt0djJQ5LeQPTqViJXyOpoyftnJogT";
+  public selectedTabIndex: number | undefined;
 
   constructor(private httpClient: HttpClient) {
   }
@@ -41,4 +39,5 @@ export class ApodService {
   getTabs(): Tab[] {
     return tabs;
   }
+
 }

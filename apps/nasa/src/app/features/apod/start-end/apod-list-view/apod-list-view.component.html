@@ -7,7 +7,6 @@
     searchExpr="title"
     searchMode="contains"
     (onSelectionChanged)=listSelectionChanged($event)>
-<!--    [selectedItemKeys]="[currentApod.title]"-->
     <!--    itemTemplate="item"-->
 
     <div *dxTemplate="let item of 'item'">
@@ -34,5 +33,4 @@
   </div>
   <div *ngIf="currentApod?.explanation">{{ currentApod.explanation }}</div>
   <img *ngIf="(currentApod?.hdurl || currentApod?.title)" src="{{ currentApod.hdurl }}" alt="{{ currentApod.title }}">
-
 </div>

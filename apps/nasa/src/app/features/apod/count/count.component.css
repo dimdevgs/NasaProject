@@ -14,22 +14,23 @@
   align-items: stretch;
 }
 
+.dx-field {
+  display: flex;
+  /*flex-direction: row;*/
+  /*width: 10%;*/
+}
+
 .dx-field-label {
-  float: left;
+/*  float: left;
   width: 30%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   color: #333;
   cursor: default;
-  padding: 8px 0px 9px 0;
-}
-.dx-field {
-  display: flex;
-  flex-direction: row;
-  width: 10%;
+  padding: 8px 0px 9px 0;*/
 }
 
 .dx-field-value-static, .dx-field-value:not(.dx-switch):not(.dx-checkbox):not(.dx-button) {
-  width: 60%;
+  /*width: 60%;*/
 }

@@ -10,18 +10,16 @@ import { DxDrawerComponent } from 'devextreme-angular';
 export class AppComponent {
   @ViewChild(DxDrawerComponent, { static: false }) drawer: DxDrawerComponent | undefined;
   navigation: List[];
-  positionModes: string[] = ['left', 'right'];
-  showModes: string[] = ['push', 'shrink', 'overlap'];
-  // text: string;
+  // positionModes: string[] = ['left', 'right'];
+  // showModes: string[] = ['push', 'shrink', 'overlap'];
   selectedOpenMode = 'shrink';
   selectedPosition = 'left';
   selectedRevealMode = 'slide';
   isDrawerOpen = true;
   elementAttr: any;
 
-  constructor(service: AppService) {
-    // this.text = service.getContent();
-    this.navigation = service.getNavigationList();
+  constructor(appService: AppService) {
+    this.navigation = appService.getNavigationList();
   }
 
   toolbarContent = [{

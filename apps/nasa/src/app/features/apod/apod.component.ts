@@ -11,21 +11,20 @@ export class ApodComponent implements OnInit {
   tabs: Tab[];
   tabContent: string | undefined;
   tabText: string | undefined;
+  selectedTabIndex: any;
 
   constructor(private apodService: ApodService, private router: Router) {
     this.tabs = apodService.getTabs();
   }
 
-  ngOnInit(): void {
-    // this.apodService.sendGetRequest().subscribe(data => {
-    //   console.log('data: ', data);
-    // })
+  selectTab(event: any): void {
+    this.tabText = this.tabs[event.itemIndex].text;
+    this.router.navigate(['/apod/', this.tabs[event.itemIndex].id]);
+    // this.router.navigate(['/apod/' + this.tabText]);
   }
 
-  selectTab(event: any): void {
-    // this.tabContent = this.tabs[event.itemIndex].content;
-    this.tabText = this.tabs[event.itemIndex].text;
-    this.router.navigate(['/apod/' + this.tabText]); // only for today
+  ngOnInit() {
+    this.selectedTabIndex = this.apodService.selectedTabIndex;
   }
 
 }

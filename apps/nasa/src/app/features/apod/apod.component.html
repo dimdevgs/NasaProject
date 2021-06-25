@@ -1,7 +1,7 @@
 <div id="tabs">
   <dx-tabs
+    (onItemClick)="selectTab($event)"
     [dataSource]="tabs"
-    [selectedIndex]="0"
-    (onItemClick)="selectTab($event)">
+    [selectedIndex]="selectedTabIndex">
   </dx-tabs>
 </div>

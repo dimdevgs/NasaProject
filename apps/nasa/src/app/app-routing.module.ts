@@ -20,18 +20,20 @@ import {DxiValidationRuleModule} from "devextreme-angular/ui/nested";
 import {ApodListViewComponent} from "./features/apod/start-end/apod-list-view/apod-list-view.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: 'apod', pathMatch: 'full' },
-  { path: 'apod', component: ApodComponent },
-  { path: 'apod/today', component: TodayComponent },
-  { path: 'apod/start-end', component: StartEndComponent },
-  { path: 'apod/count', component: CountComponent },
+  { path: '', redirectTo: 'apod/1', pathMatch: 'full' },
+  { path: 'apod', redirectTo: 'apod/1', pathMatch: 'full' },
+  { path: 'apod/1', component: TodayComponent },
+  { path: 'apod/2', component: StartEndComponent },
+  { path: 'apod/3', component: CountComponent },
   { path: 'eonet', component: EonetComponent },
   { path: 'donki', component: DonkiComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
+// {path : 'heroes', component : HeroDetailComponent, data : {some_data : 'some value'}}
+
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes), DxButtonModule, DxTabsModule, CommonModule, DxDateBoxModule, DxiValidationRuleModule, DxListModule, DxDataGridModule, DxTileViewModule, DxTextBoxModule, DxValidatorModule],
+  imports: [RouterModule.forRoot(routes), DxButtonModule, DxTabsModule, CommonModule, DxDateBoxModule, DxiValidationRuleModule, DxListModule, DxDataGridModule, DxTileViewModule, DxTextBoxModule, DxValidatorModule],
   exports: [RouterModule],
   declarations: [
     ApodComponent,
